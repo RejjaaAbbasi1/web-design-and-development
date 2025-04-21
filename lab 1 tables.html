@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Film Ratings Table</title>
+<style>
+  table {
+    width: 35%; 
+    border-collapse: collapse;
+    margin: 20px auto; 
+    font-family: sans-serif;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  .header-row {
+    background-color: #add8e6;
+    color: black; 
+  }
+  .light-blue-bg {
+    background-color: #e0f2f7; 
+  }
+</style>
+</head>
+<body>
+
+<table>
+  <thead>
+    <tr class="header-row">
+      <td>Country</td>
+      <td>Film title</td>
+      <td>Released</td>
+      <td>Votes</td>
+      <td>Rating</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">USA</td>
+      <td>The Shawshank Redemption</td>
+      <td>1994</td>
+      <td>678790</td>
+      <td >9.5</td>
+    </tr>
+    <tr>
+      <td>The Godfather</td>
+      <td>1972</td>
+      <td>511495</td>
+      <td>9.2</td>
+    </tr>
+    <tr>
+      <td>The Godfather: Part II</td>
+      <td>1974</td>
+      <td>319352</td>
+      <td>9</td>
+    </tr>
+    <tr class="light-blue-bg">
+      <td colspan="4"><b>Highest Rating</b></td>
+      <td><b>9.5</b></td>
+    </tr>
+    <tr>
+      <td rowspan="2">Italy</td>
+      <td>The Good, the Bad and the Ugly</td>
+      <td>1966</td>
+      <td>213030</td>
+      <td>8.9</td>
+    </tr>
+    <tr>
+      <td>The Star Maker</td>
+      <td>1995</td>
+      <td>164558</td>
+      <td>7.9</td>
+    </tr>
+    <tr class="light-blue-bg">
+      <td colspan="4"><b> Rating</b></td>
+      <td><b>8.9</b></td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
