@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ddd;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        td {
+            text-align: center;
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            background-color: #ddd;
+            color: #333;
+        }
+        tr:first-child td {
+            border-bottom: 2px solid rgb(241, 160, 9);
+            background-color: #ddd;
+            color: #333;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .section-title-cell {
+            padding: 8px;
+            width: 25%;
+            color: rgb(206, 139, 16);
+            font-weight: bold;
+            font-style: italic;
+            background-color: #ddd;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .section-content-cell {
+            padding: 10px;
+            width: 75%;
+            background-color: #ddd;
+            color: #333;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .header-left {
+            padding: 10px;
+            color: #333;
+            background-color: #ddd;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .header-right {
+            text-align: right;
+            font-size: 14px;
+            padding: 10px;
+            color: #333;
+            background-color: #ddd;
+            vertical-align: middle;
+        }
+        .work-experience-item, .education-item {
+            background-color: #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            color: #333;
+            text-align: left;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            padding-top: 15px;
+            color: #777;
+            border-bottom: none;
+            background-color: #ddd;
+            vertical-align: middle;
+        }
+        .key-skills-list {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding: 5px 0;
+            color: #444;
+            text-align: left;
+        }
+        .profile-image-cell {
+            padding: 5px;
+            width: 60px;
+            background-color: #ddd;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .header-left-profile {
+            padding: 5px;
+            color: #333;
+            background-color: #ddd;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .header-row td {
+            padding-bottom: 5px;
+            background-color: #ddd;
+            color: #333;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .section-title-cell {
+            vertical-align: middle;
+            text-align:center;
+        }
+        .section-content-cell {
+            vertical-align: middle;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr class="header-row">
+                <td class="profile-image-cell" rowspan="1">
+                    <img src="https://www.google.com/imgres?q=profile%20photo%20logo%20pic.png&imgurl=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F020%2F911%2F736%2Fnon_2x%2Fprofile-icon-user-icon-person-icon-free-png.png&imgrefurl=https%3A%2F%2Fwww.vecteezy.com%2Fpng%2F20911736-profile-icon-user-icon-person-icon&docid=D-74bJdoL0tOoM&tbnid=M0ZaNdfZO_aEXM&vet=12ahUKEwjdnLSfiIyNAxU1QPEDHVJTGH4QM3oECD8QAA..i&w=980&h=980&hcb=2&ved=2ahUKEwjdnLSfiIyNAxU1QPEDHVJTGH4QM3oECD8QAA" alt="Profile" style="width: 85px; height: 80px; border-radius:100%;">
+                </td>
+                <td class="header-left-profile">
+                    <b>Rejjaa Abbasi</b><br>
+                    <span style="color: #777;">Course Instructor</span>
+                </td>
+                <td class="header-right">
+                    <a href="https://github.com/RejjaaAbbasi1/web-design-and-development" style="color: #007bff; text-decoration: none; display: block;">www.mygithubrepo.com</a>
+                    <a href="mailto:rejjaaabbasi@gmail.com" style="color: #007bff; text-decoration: none; display: block;">rejjaaabbasi@gmail.com</a>
+                    <span style="color: #555;">+92-3055115310</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="section-title-cell">Personal Profile</td>
+                <td class="section-content-cell">
+                    <p style="text-align: left;">lipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="section-title-cell">Work Experience</td>
+                <td class="section-content-cell">
+                    <div class="work-experience-item">
+                        <b>Job Title at Company</b><br>
+                        <span >April 2011-present</span><br>
+                        <p style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <div class="work-experience-item">
+                        <b>Job Title at Company</b><br>
+                        <span >April 2011-present</span><br>
+                        <p style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <div class="work-experience-item">
+                        <b>Job Title at Company</b><br>
+                        <span >April 2011-present</span><br>
+                        <p style="text-align: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="section-title-cell">Key Skills</td>
+                <td class="section-content-cell">
+                    <ul class="key-skills-list">
+                        <li>Key Skill 1</li>
+                        <li>Key Skill 2</li>
+                        <li>Key Skill 3</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="section-title-cell">Education</td>
+                <td class="section-content-cell">
+                    <div class="education-item">
+                        <b>College/University</b><br>
+                        <span >Qualification</span><br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <div class="education-item">
+                        <b>College/University</b><br>
+                        <span >Qualification</span><br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="footer">
+                    © All Rights Reserved 2025 WDD
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
