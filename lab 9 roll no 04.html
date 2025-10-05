@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 09_Create Account </title>
+  <style>
+   
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    form {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+      width: 450px; 
+      box-sizing: border-box;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #000000; 
+      font-size: 0.95em;
+    }
+
+    /* Input Fields */
+    input {
+      width: 100%;
+      padding: 12px;
+      background: #f8f9fa;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      color: #333;
+      font-size: 1em;
+      box-sizing: border-box; 
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+      outline: none;
+      background: #fff;
+    }
+
+    /* Error Messages */
+    .error {
+      color: #dc3545;
+      font-size: 0.85em;
+      margin-bottom: 6px;
+      padding: 6px 10px;
+      background-color: rgba(220, 53, 69, 0.1); 
+      border-radius: 4px;
+      border-left: 4px solid #dc3545;
+      display: none;
+      font-weight: 500;
+    }
+
+    .error:not(:empty) {
+      display: block;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center; 
+      margin-top: 25px;
+    }
+
+    button {
+      width: 60%; 
+      padding: 12px;
+      border: none;
+      background: #007bff;
+      color: #ffffff; 
+      font-size: 1.05em;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.1s;
+    }
+
+    button:hover {
+      background: #0056b3;
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+
+  <form id="registerForm">
+    <h2>Registration Form</h2>
+
+    <div class="form-group">
+        <div class="error" id="firstNameError"></div>
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" placeholder="First Name" maxlength="10"> 
+    </div>
+
+    <div class="form-group">
+        <div class="error" id="lastNameError"></div>
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" placeholder="Last Name" maxlength="10">
+    </div>
+
+    <div class="form-group">
+      <div class="error" id="emailError"></div>
+      <label for="email">Email</label>
+      <input type="text" id="email" placeholder="you@example.com">
+    </div>
+
+    <div class="form-group">
+      <div class="error" id="passwordError"></div>
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Max 8 chars, 1 Cap, 1 Special" maxlength="8"> 
+    </div>
+
+    <div class="form-group">
+      <div class="error" id="confirmError"></div>
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" placeholder="Re-enter password" maxlength="8">
+    </div>
+
+    <div class="button-container">
+        <button type="submit">REGISTER NOW</button>
+    </div>
+  </form>
+
+  <script>
+    const form = document.getElementById('registerForm');
+    const firstNameInput = document.getElementById('firstName');
+    const lastNameInput = document.getElementById('lastName');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+
+    // Function to display error
+    function setError(elementId, message) {
+        const errorElement = document.getElementById(elementId);
+        errorElement.textContent = message;
+    }
+
+    // Function for name validation (Min 3, Max 10)
+    function validateNameField(input, errorId, fieldName) {
+        const value = input.value.trim();
+        let valid = true;
+        const minLength = 3;
+        const maxLength = 10;
+
+        if (value === '') {
+            setError(errorId, `${fieldName} is required`);
+            valid = false;
+        } else if (value.length < minLength) {
+            setError(errorId, `${fieldName} must be at least ${minLength} characters`);
+            valid = false;
+        } else if (value.length > maxLength) {
+            setError(errorId, `${fieldName} cannot exceed ${maxLength} characters`);
+            valid = false;
+        }
+        return valid;
+    }
+
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let formIsValid = true;
+      document.querySelectorAll('.error').forEach(el => el.textContent = '');
+      const isFirstNameValid = validateNameField(firstNameInput, 'firstNameError', 'First Name');
+      const isLastNameValid = validateNameField(lastNameInput, 'lastNameError', 'Last Name');
+      
+      if (!isFirstNameValid || !isLastNameValid) {
+          formIsValid = false;
+      }
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!emailInput.value.match(emailPattern)) {
+        setError('emailError', 'Enter a valid email address (e.g., example@domain.com)');
+        formIsValid = false;
+      }
+      const passwordValue = passwordInput.value;
+      const capitalLetterPattern = /[A-Z]/; 
+      const specialCharPattern = /[!@#$%^&*(),.?":{}|<>]/; 
+      const exactLength = 8;
+
+      if (passwordValue.length !== exactLength) {
+           setError('passwordError', `Password must be exactly ${exactLength} characters long.`);
+           formIsValid = false;
+      } else if (!capitalLetterPattern.test(passwordValue)) {
+          setError('passwordError', 'Password must contain at least 1 Capital letter');
+          formIsValid = false;
+      } else if (!specialCharPattern.test(passwordValue)) {
+          setError('passwordError', 'Password must contain at least 1 Special character');
+          formIsValid = false;
+      }
+      if (passwordValue !== confirmPasswordInput.value) {
+        setError('confirmError', 'Passwords do not match');
+        formIsValid = false;
+      }
+    
+       if (confirmPasswordInput.value.length !== exactLength) {
+           setError('confirmError', `Confirmation Password must be exactly ${exactLength} characters long.`);
+           formIsValid = false;
+       }
+
+
+      if (formIsValid) {
+        alert('Registration Successful! ✅');
+        form.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>
